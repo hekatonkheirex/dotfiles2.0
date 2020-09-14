@@ -1,0 +1,67 @@
+!!! URxvt config !!!
+!! Colorscheme !!
+! hard contrast: *background: #1d2021
+*background: #1a1a1a
+! soft contrast: *background: #32302f
+*foreground: #c4c5b5
+! Black + DarkGrey
+*color0:  #1a1a1a
+*color8:  #303030
+! DarkRed + Red
+*color1:  #db0055
+*color9:  #f4005f
+! DarkGreen + Green
+*color2:  #88d120
+*color10: #98e924
+! DarkYellow + Yellow
+*color3:  #cfc568
+*color11: #e6db74
+! DarkBlue + Blue
+*color4:  #4fbcd3
+*color12: #58d1eb
+! DarkMagenta + Magenta
+*color5:  #e355d8
+*color13: #fd5ff0
+! DarkCyan + Cyan
+*color6:  #90d7cd
+*color14: #a1efe4
+! LightGrey + White
+*color7:  #c4c5b5
+*color15: #f6f6ef
+
+!! URxvt Appearance !!
+URxvt*font: xft:Iosevka Extended:Regular:pixelsize=14:minspace=False, \
+            xft:Material Design Icons Desktop:Regular:pixelsize=14:minspace=False, \
+URxvt*boldFont: xft:Iosevka Extended:Bold:pixelsize=14:minspace=False, \
+URxvt*italicFont: xft:Iosevka Extended:Italic:pixelsize=14:minspace=False, \
+URxvt*boldItalicFont: xft:Iosevka Extended:Bold Italic:minspace=False, \
+URxvt*letterspace: 2
+URxvt*lineSpace: 0
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt.iso14755: false
+
+!! Common Keybinds for Navigations !!
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+
+!! Copy Paste & Other Extensions !!
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
